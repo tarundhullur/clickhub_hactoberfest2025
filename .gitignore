@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+PROJECT_SETUP.md
+PAGINATION_SEARCH_FEATURES.md
+MINIMAL_DESIGN_UPDATE.md
+UPDATES.md
+DEPLOYMENT.md

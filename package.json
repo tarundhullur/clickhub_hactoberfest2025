@@ -1,12 +1,22 @@
 {
   "name": "clickhub",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A showcase of creative button designs for Hacktoberfest 2025",
   "private": true,
+  "keywords": ["hacktoberfest", "buttons", "showcase", "nextjs", "react", "css", "javascript"],
+  "author": "ClickHub Contributors",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "validate-contributions": "node scripts/validate-contributions.js",
+    "preview": "npm run build && npm start",
+    "vercel-build": "npm run lint && npm run type-check && npm run build",
+    "postbuild": "echo 'Build completed successfully!'"
   },
   "dependencies": {
     "react": "19.1.0",

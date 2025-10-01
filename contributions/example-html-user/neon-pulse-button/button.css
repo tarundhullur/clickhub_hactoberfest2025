@@ -1,0 +1,80 @@
+.neon-button {
+  background: transparent;
+  border: 2px solid #00ffff;
+  padding: 12px 24px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.neon-text {
+  color: #00ffff;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff;
+  animation: pulse 2s infinite;
+}
+
+.neon-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.neon-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff,
+      0 0 20px #00ffff;
+  }
+  50% {
+    text-shadow: 
+      0 0 2px #00ffff,
+      0 0 5px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #00ffff;
+  }
+}

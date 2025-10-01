@@ -1,0 +1,99 @@
+.neon-glow-button {
+  position: relative;
+  background: transparent;
+  border: 2px solid #00ffff;
+  padding: 16px 32px;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 10px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.neon-text {
+  color: #00ffff;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.electric-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 400% 400%;
+  animation: electricFlow 2s ease-in-out infinite;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.neon-glow-button:hover {
+  background: rgba(0, 255, 255, 0.05);
+  box-shadow: 
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.neon-glow-button:hover .electric-border {
+  opacity: 1;
+}
+
+.neon-glow-button:hover .neon-text {
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    0 0 40px #00ffff;
+}
+
+.neon-glow-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 15px #00ffff,
+    inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.neon-glow-button.pulse-active {
+  animation: neonPulse 0.5s ease-in-out;
+}
+
+@keyframes electricFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px #00ffff,
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px #00ffff,
+      0 0 60px #00ffff,
+      inset 0 0 30px rgba(0, 255, 255, 0.2);
+  }
+}
