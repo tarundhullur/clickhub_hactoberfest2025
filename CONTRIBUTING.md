@@ -115,18 +115,21 @@ What inspired your design?
 ## 🎨 Design Standards
 
 ### Accessibility Requirements
+
 - Minimum 4.5:1 color contrast ratio
 - Keyboard navigation support (tab, enter, space)
 - Screen reader friendly
 - Focus indicators
 
 ### Technical Requirements
+
 - No external dependencies (except React hooks)
 - No external API calls
 - File size under 50KB total
 - Works in modern browsers
 
 ### Visual Guidelines
+
 - Responsive design (works on mobile)
 - Clear interactive states (hover, focus, active)
 - Smooth animations (< 500ms)
@@ -154,12 +157,14 @@ Use descriptive tags in your `index.js`:
 ## 🔍 Testing Your Contribution
 
 ### Local Testing
+
 ```bash
 npm run dev
 # Visit http://localhost:3000
 ```
 
 ### Checklist Before Submitting
+
 - [ ] Button appears in the showcase
 - [ ] All animations work smoothly
 - [ ] Responsive on mobile devices
@@ -170,6 +175,7 @@ npm run dev
 ## 📤 Submission Process
 
 ### 1. Commit Your Changes
+
 ```bash
 git add .
 git commit -m "Add [ButtonName] button by [username]
@@ -180,23 +186,28 @@ git commit -m "Add [ButtonName] button by [username]
 ```
 
 ### 2. Push to Your Fork
+
 ```bash
 git push origin main
 ```
 
 ### 3. Create Pull Request
+
 - Go to your fork on GitHub
 - Click "New Pull Request"
 - Use the provided PR template
 - Include screenshots/GIFs if possible
 
 ### 4. PR Requirements
+
 Your PR title should follow this format:
+
 ```
 Add [ButtonName] by @username
 ```
 
 PR description should include:
+
 - What your button does
 - Technologies used
 - Any special features
@@ -205,12 +216,14 @@ PR description should include:
 ## 🚫 What Not to Include
 
 ### Prohibited Content
+
 - Offensive, discriminatory, or inappropriate material
 - Copyrighted content without permission
 - Political or religious content
 - Spam or promotional content
 
 ### Technical Restrictions
+
 - No external dependencies (beyond provided ones)
 - No server-side code
 - No database connections
@@ -220,6 +233,7 @@ PR description should include:
 ## 🏆 Recognition
 
 Great contributions may be featured:
+
 - In our README showcase
 - On social media
 - In Hacktoberfest highlights
@@ -227,12 +241,14 @@ Great contributions may be featured:
 ## 🆘 Getting Help
 
 **Need help?**
+
 - Check our [examples](../contributions/)
 - Review existing [issues](https://github.com/MRIEnan/clickhub_hactoberfest2025/issues)
 - Create a new issue with the "help wanted" label
 - Join our community discussions
 
 **Common Issues:**
+
 - **Button not showing**: Check your `index.js` export
 - **Styles not working**: Ensure CSS class names are unique
 - **TypeScript errors**: Use `.jsx` instead of `.tsx` if needed
