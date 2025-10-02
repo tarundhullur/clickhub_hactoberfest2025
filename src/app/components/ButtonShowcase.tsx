@@ -164,7 +164,24 @@ export default function ButtonShowcase({ contribution }: ButtonShowcaseProps) {
             
             // Try to import the React component using the pre-calculated import path
             const componentModule = await import(`../../../contributions/${contribution.importPath}/button`);
-            setReactComponent(() => componentModule.default);
+            
+            // Check if default export is valid, otherwise try named exports
+            let Component = componentModule.default;
+            
+            // If default export is not a function/component, try to find a named export
+            if (!Component || typeof Component !== 'function') {
+              // Look for common named export patterns
+              Component = componentModule.Button || 
+                         componentModule.ButtonComponent || 
+                         componentModule[Object.keys(componentModule)[0]]; // First export
+            }
+            
+            // Validate that we have a valid React component
+            if (Component && typeof Component === 'function') {
+              setReactComponent(() => Component);
+            } else {
+              throw new Error('No valid React component found in module');
+            }
           } else {
             throw new Error('No import path available');
           }
@@ -175,7 +192,21 @@ export default function ButtonShowcase({ contribution }: ButtonShowcaseProps) {
           try {
             console.log(`Fallback: trying ../../../contributions/${contribution.metadata.author}/button`);
             const componentModule = await import(`../../../contributions/${contribution.metadata.author}/button`);
-            setReactComponent(() => componentModule.default);
+            
+            // Apply same validation logic for fallback
+            let Component = componentModule.default;
+            
+            if (!Component || typeof Component !== 'function') {
+              Component = componentModule.Button || 
+                         componentModule.ButtonComponent || 
+                         componentModule[Object.keys(componentModule)[0]];
+            }
+            
+            if (Component && typeof Component === 'function') {
+              setReactComponent(() => Component);
+            } else {
+              throw new Error('No valid React component found in fallback module');
+            }
           } catch (fallbackError) {
             console.error(`Fallback import also failed for ${contribution.metadata.author}:`, fallbackError);
           }
@@ -197,7 +228,28 @@ export default function ButtonShowcase({ contribution }: ButtonShowcaseProps) {
   const renderButton = () => {
     if (contribution.metadata.type === 'react' && reactComponent) {
       const Component = reactComponent;
-      return <Component />;
+      
+      // Additional safety check to ensure Component is valid
+      if (typeof Component !== 'function') {
+        console.error('Invalid component type:', typeof Component, Component);
+        return (
+          <div className="text-red-500 italic text-sm p-2 border border-red-300 rounded">
+            Error: Invalid React component - expected function but got {typeof Component}
+          </div>
+        );
+      }
+      
+      // Wrap in error boundary-like try-catch for additional safety
+      try {
+        return <Component />;
+      } catch (error) {
+        console.error('Error rendering React component:', error);
+        return (
+          <div className="text-red-500 italic text-sm p-2 border border-red-300 rounded">
+            Error rendering component: {error instanceof Error ? error.message : 'Unknown error'}
+          </div>
+        );
+      }
     } else if (contribution.html && contribution.css) {
       return (
         <HtmlButtonWrapper 

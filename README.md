@@ -28,6 +28,7 @@ Welcome to **ClickHub** - the ultimate showcase of creative button designs from 
 This repository is **officially participating** in Hacktoberfest 2025! We're looking for creative developers to contribute amazing button designs and help build the most comprehensive button showcase on GitHub.
 
 ### Why Contribute to ClickHub?
+
 - ✅ **Beginner Friendly** - Perfect for first-time contributors
 - ✅ **Multiple Tech Stacks** - React, Vanilla JS, or HTML/CSS
 - ✅ **Creative Freedom** - Design buttons your way
@@ -37,18 +38,21 @@ This repository is **officially participating** in Hacktoberfest 2025! We're loo
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ 
 - npm, yarn, or pnpm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/MRIEnan/clickhub_hactoberfest2025.git
    cd clickhub_hactoberfest2025
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -58,6 +62,7 @@ This repository is **officially participating** in Hacktoberfest 2025! We're loo
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -67,7 +72,7 @@ This repository is **officially participating** in Hacktoberfest 2025! We're loo
    ```
 
 4. **Open your browser**
-   
+  
    Navigate to [http://localhost:3000](http://localhost:3000) to see the button showcase!
 
 ## 🎯 How to Contribute
@@ -75,20 +80,24 @@ This repository is **officially participating** in Hacktoberfest 2025! We're loo
 We welcome contributions in **three different formats**:
 
 ### 1. 🟢 React/Next.js Component (Recommended)
+
 Perfect for developers familiar with React and modern JavaScript frameworks.
 
 ### 2. 🟡 HTML + CSS + JavaScript
+
 Great for traditional web developers who prefer vanilla approaches.
 
 ### 3. 🟠 Pure Vanilla JavaScript
+
 For developers who want to showcase advanced JavaScript techniques.
 
 ## 📁 Contribution Structure
 
 ### Single Button (Simple Structure)
+
 Create a folder in `/contributions/` with your **GitHub username**:
 
-```
+```bash
 contributions/
 └── your-github-username/
     ├── index.js          # Required: Button metadata
@@ -100,9 +109,10 @@ contributions/
 ```
 
 ### Multiple Buttons (Advanced Structure) 🆕
+
 Want to contribute multiple buttons? Create subfolders for each button:
 
-```
+```bash
 contributions/
 └── your-github-username/
     ├── awesome-button/
@@ -123,6 +133,7 @@ contributions/
 ## 🛠️ Step-by-Step Contribution Guide
 
 ### Step 1: Fork and Clone
+
 ```bash
 # Fork this repository on GitHub, then:
 git clone https://github.com/MRIEnan/clickhub_hactoberfest2025.git
@@ -133,12 +144,14 @@ npm install
 ### Step 2: Create Your Folder
 
 **Single Button:**
+
 ```bash
 mkdir contributions/your-github-username
 cd contributions/your-github-username
 ```
 
 **Multiple Buttons (Advanced):**
+
 ```bash
 mkdir -p contributions/your-github-username/your-button-name
 cd contributions/your-github-username/your-button-name
@@ -170,6 +183,7 @@ export default buttonMetadata;
 #### Option A: React/Next.js Component 🟢
 
 Create `button.jsx`:
+
 ```jsx
 // contributions/your-github-username/button.jsx
 'use client';
@@ -195,6 +209,7 @@ export default function YourButtonName() {
 Create three files:
 
 **`button.html`:**
+
 ```html
 <button class="my-button" onclick="handleClick()">
   <span>Click Me!</span>
@@ -202,6 +217,7 @@ Create three files:
 ```
 
 **`button.css`:**
+
 ```css
 .my-button {
   padding: 12px 24px;
@@ -220,6 +236,7 @@ Create three files:
 ```
 
 **`button.js`:**
+
 ```javascript
 function handleClick() {
   console.log('Button clicked!');
@@ -248,14 +265,16 @@ Then create a Pull Request on GitHub!
 
 ## 🎨 Design Guidelines
 
-### ✅ What Makes a Great Button:
+### ✅ What Makes a Great Button
+
 - **Accessible**: Proper contrast ratios and keyboard navigation
 - **Responsive**: Works on all screen sizes
 - **Interactive**: Clear hover, focus, and active states
 - **Creative**: Unique design or animation
 - **Well-documented**: Clear code comments and optional README
 
-### 🚫 What to Avoid:
+### 🚫 What to Avoid
+
 - Offensive or inappropriate content
 - Copyrighted materials without permission
 - Buttons that break accessibility standards
@@ -265,6 +284,7 @@ Then create a Pull Request on GitHub!
 ## 🏷️ Suggested Tags
 
 Use relevant tags in your `index.js`:
+
 - **Animations**: `animation`, `transition`, `keyframes`
 - **Styles**: `gradient`, `neon`, `glassmorphism`, `neumorphism`
 - **Effects**: `hover`, `glow`, `ripple`, `shadow`
@@ -274,6 +294,7 @@ Use relevant tags in your `index.js`:
 ## 🏆 Examples
 
 Check out these example contributions in the `/contributions/` folder:
+
 - [`example-react-user/gradient-glow-button`](./contributions/example-react-user/gradient-glow-button/) - React component with gradient glow
 - [`example-html-user/neon-pulse-button`](./contributions/example-html-user/neon-pulse-button/) - HTML/CSS neon pulse button
 - [`example-vanilla-user/flip-3d-button`](./contributions/example-vanilla-user/flip-3d-button/) - Advanced 3D flip button
@@ -317,6 +338,7 @@ npm run lint
 ## 🐛 Issues and Support
 
 Found a bug or need help? Please:
+
 1. Check existing [issues](https://github.com/MRIEnan/clickhub_hactoberfest2025/issues)
 2. Create a new issue with detailed information
 3. Join our community discussions
